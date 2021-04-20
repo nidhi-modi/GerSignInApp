@@ -3,7 +3,7 @@ import {
   StyleSheet, Text, View, Image, TouchableOpacity,
   TextInput,
   Dimensions, Platform,
-  PanResponder, Keyboard, SafeAreaView, Modal, ActivityIndicator
+  TouchableWithoutFeedback, Keyboard, SafeAreaView, Modal, ActivityIndicator
 } from 'react-native';
 
 import { ScrollView } from 'react-native-gesture-handler';
