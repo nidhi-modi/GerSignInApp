@@ -86,13 +86,13 @@ export default class Database {
         });
     }
 
-    listVisitorsName(signinDateOnly) {
+    listVisitorsName(signinDateOnly, signOutDate) {
         return new Promise((resolve) => {
             const visitorDetails = [];
             this.initDB().then((db) => {
                 db.transaction((tx) => {
 
-                    tx.executeSql('SELECT p.visitorId, p.visitorName, p.signinTime, p.weekNumber, p.signinDate, p.companyName, p.visitingPerson, p.visitingPersonOthers, p.visitedBefore, p.visitedOtherGH, p.termsConditions, p.signoutDate, p.signoutTime FROM GerSignin p WHERE signinDate = ?', [signinDateOnly]).then(([tx, results]) => {
+                    tx.executeSql('SELECT p.visitorId, p.visitorName, p.signinTime, p.weekNumber, p.signinDate, p.companyName, p.visitingPerson, p.visitingPersonOthers, p.visitedBefore, p.visitedOtherGH, p.termsConditions, p.signoutDate, p.signoutTime FROM GerSignin p WHERE signinDate = ? AND signoutDate = ?', [signinDateOnly,signOutDate]).then(([tx, results]) => {
                         console.log("Query completed");
                         var len = results.rows.length;
                         for (let i = 0; i < len; i++) {

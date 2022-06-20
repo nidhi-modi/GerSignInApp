@@ -53,7 +53,7 @@ export default class SigninForm extends Component {
     
     dbDate = month + '/' + date + '/' + year
 
-    db.listVisitorsName(dbDate).then((dataRes) => {
+    db.listVisitorsName(dbDate,"").then((dataRes) => {
       console.log("Calling database");
       this.setState({
         data: dataRes
@@ -124,7 +124,7 @@ export default class SigninForm extends Component {
 
       console.log(result);
 
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycby9ML4MBF4z7agjCmBaTBHlK9z2np9deD4j6V-twaDXqDdnz9SsnUSUB9Q58Wr9gqPsjg/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBR63Gj4JsdWwXE8iI_qmDe-GZWOjmDUHSWVBfdAiTEgbUuh9A/exec';
       const url = `${scriptUrl}?
         callback=ctrlq&action=${'doPostGerSignOutDetails'}&week_number=${weekNumber}&signin_date=${signinDate}&signin_time=${signinTime}&visitor_name=${visitorName}&company_name=${companyName}&visiting_person=${visitingPerson}&visiting_person_others=${visitingPersonOthers}&inducted_before=${visitedBefore}&visited_glasshouse=${visitedOtherGH}&terms_conditions=${termsConditions}&signout_date=${completeDate}&signout_time=${completeTime}`;
 
