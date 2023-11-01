@@ -247,7 +247,7 @@ export default class SignOutForm extends Component {
                     console.log(result);
 
                     const scriptUrl =
-                      'https://script.google.com/macros/s/AKfycbzBR63Gj4JsdWwXE8iI_qmDe-GZWOjmDUHSWVBfdAiTEgbUuh9A/exec';
+                      'https://script.google.com/macros/s/AKfycbyJ1L7FLV8QMfvPsuanVQaGj2QIe6m84y5wDbBka7TKx67NLotvZpGmI7ziw2sDpZJS/exec';
                     const url = `${scriptUrl}?
                     callback=ctrlq&action=${'doPostGerDetails'}&week_number=${
                       this.state.weekNumber
